@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DriverRouter = void 0;
+const express_1 = require("express");
+const checkAuth_1 = require("../../middlewares/checkAuth");
+const user_interface_1 = require("../user/user.interface");
+const driver_controller_1 = require("./driver.controller");
+const validateRequest_1 = require("../../middlewares/validateRequest");
+const driver_validation_1 = require("./driver.validation");
+const router = (0, express_1.Router)();
+router.get("/get-ride-request", (0, checkAuth_1.checkAuth)(user_interface_1.Role.DRIVER, user_interface_1.Role.ADMIN), driver_controller_1.DriverControllers.getRideRequest);
+router.get("/earning-history", (0, checkAuth_1.checkAuth)(user_interface_1.Role.DRIVER), driver_controller_1.DriverControllers.getEarningHistory);
+router.get("/pending-ride/:id", (0, checkAuth_1.checkAuth)(user_interface_1.Role.DRIVER), driver_controller_1.DriverControllers.pendingRideStatus);
+router.patch("/request/:id", (0, checkAuth_1.checkAuth)(user_interface_1.Role.DRIVER, user_interface_1.Role.ADMIN), (0, validateRequest_1.validateRequest)(driver_validation_1.beADriverZodSchema), driver_controller_1.DriverControllers.beADriver);
+exports.DriverRouter = router;

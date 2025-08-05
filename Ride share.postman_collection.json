@@ -1,0 +1,905 @@
+{
+	"info": {
+		"_postman_id": "95108b9d-0977-46a3-9850-bff120ae843c",
+		"name": "Ride share",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30492689"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ronit\",\r\n    \"email\": \"ronit1@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"phone\": \"01831495895\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/create",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAyOTE2MSwiZXhwIjoxNzU0MTE1NTYxfQ.QF_CuWuzVPaUEvJ6zjKOKWpkP5Xrq83Gn6bBbNjsXSw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user?searchTerm=01&name=Md Ranit Rubbyat Sultan&sort=-phone&page=1&limit=10&fields=name,email,phone,address,role",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "01"
+								},
+								{
+									"key": "name",
+									"value": "Md Ranit Rubbyat Sultan"
+								},
+								{
+									"key": "sort",
+									"value": "-phone"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "fields",
+									"value": "name,email,phone,address,role"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAyOTE2MSwiZXhwIjoxNzU0MTE1NTYxfQ.QF_CuWuzVPaUEvJ6zjKOKWpkP5Xrq83Gn6bBbNjsXSw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/688a500cf32a37bb0028654a",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"688a500cf32a37bb0028654a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAyOTE2MSwiZXhwIjoxNzU0MTE1NTYxfQ.QF_CuWuzVPaUEvJ6zjKOKWpkP5Xrq83Gn6bBbNjsXSw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/me",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all requested role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAyOTE2MSwiZXhwIjoxNzU0MTE1NTYxfQ.QF_CuWuzVPaUEvJ6zjKOKWpkP5Xrq83Gn6bBbNjsXSw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/req-role/all-req?sort=-createdAt&page=1&limit=10",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"req-role",
+								"all-req"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-createdAt"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get request role status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAyOTE2MSwiZXhwIjoxNzU0MTE1NTYxfQ.QF_CuWuzVPaUEvJ6zjKOKWpkP5Xrq83Gn6bBbNjsXSw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reqRole\":\"DRIVER\",\r\n    \"vehicle\":\"CAR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/req-role/stats",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"req-role",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTM5ODg1NzQsImV4cCI6MTc1NDA3NDk3NH0.NIdH10VlM_1tB9kv01NscxcWDjeTUYqlSwXM8O2grU8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reqRole\":\"DRIVER\",\r\n    \"vehicle\":\"CAR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/req-role/request",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"req-role",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept-req",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk2NTk5MCwiZXhwIjoxNzU0MDUyMzkwfQ.MQCxRu42q37MpcJR-DuUMR0rixqveBPEctATwrGG2ig",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isAccepted\":\"ACCEPTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/req-role/688bbd8d83cd33e6d61b5a9c",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"req-role",
+								"688bbd8d83cd33e6d61b5a9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk2NzI2NSwiZXhwIjoxNzU0MDUzNjY1fQ.fuclLOW-8IJlQmtHz02VRJPJZ4YBJeuP6a-z1QeOHf0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isOnline\":\"ONLINE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/user/688a5200f919351a2239a133",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"688a5200f919351a2239a133"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"super_admin@gmail.com\",\r\n    \"password\": \"@123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  access token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk2NzI2NSwiZXhwIjoxNzU0MDUzNjY1fQ.fuclLOW-8IJlQmtHz02VRJPJZ4YBJeuP6a-z1QeOHf0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/auth/refresh-token",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzOTAwNjY4LCJleHAiOjE3NTM5ODcwNjh9.n92o_I5xNHNND3IFfeLpBQrSbZIqz154B_6BYKA4P6I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/auth/set-password",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"set-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzOTAwNjY4LCJleHAiOjE3NTM5ODcwNjh9.n92o_I5xNHNND3IFfeLpBQrSbZIqz154B_6BYKA4P6I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"12345678\",\r\n    \"newPassword\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/auth/change-password",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mdranitrubbyatsultan@gmail.com\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/auth/logout",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ride",
+			"item": [
+				{
+					"name": "ride request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTM5OTA4NTksImV4cCI6MTc1NDA3NzI1OX0.jijFPVRfnMA3mDxg6r-ZsVjplItxWsO9LqIcgrkOO0k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": {\r\n      \"from\": { \"lat\": 23.8456, \"lng\": 90.4002 },\r\n      \"to\": { \"lat\": 23.8601, \"lng\": 90.4156 }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/ride/request",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ride",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk2NzI2NSwiZXhwIjoxNzU0MDUzNjY1fQ.fuclLOW-8IJlQmtHz02VRJPJZ4YBJeuP6a-z1QeOHf0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n"
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/ride/cancel",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ride",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTM5OTA4NTksImV4cCI6MTc1NDA3NzI1OX0.jijFPVRfnMA3mDxg6r-ZsVjplItxWsO9LqIcgrkOO0k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/ride/history?rideStatus=REQUESTED&sort=-createdAt&fields=phone,location&page=1&limit=10",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ride",
+								"history"
+							],
+							"query": [
+								{
+									"key": "rideStatus",
+									"value": "REQUESTED"
+								},
+								{
+									"key": "sort",
+									"value": "-createdAt"
+								},
+								{
+									"key": "fields",
+									"value": "phone,location"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-cancels",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTIwMGY5MTkzNTFhMjIzOWExMzMiLCJlbWFpbCI6InN1cGVyX2FkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk3OTg2OCwiZXhwIjoxNzU0MDY2MjY4fQ.I9hOPFwkpeo6knJSP3iJWMUbBlm0CGkgdCz5L6wI3bg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/ride/delete-all-cancel",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ride",
+								"delete-all-cancel"
+							],
+							"query": [
+								{
+									"key": "rideStatus",
+									"value": "REQUESTED",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "driver",
+			"item": [
+				{
+					"name": "get earning",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTM5OTA4NTksImV4cCI6MTc1NDA3NzI1OX0.jijFPVRfnMA3mDxg6r-ZsVjplItxWsO9LqIcgrkOO0k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/driver/earning-history?sort=-createdAt&page=1&limit=10",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"earning-history"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-createdAt"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pending ride status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTM5OTA4NTksImV4cCI6MTc1NDA3NzI1OX0.jijFPVRfnMA3mDxg6r-ZsVjplItxWsO9LqIcgrkOO0k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/driver/pending-ride/688c586cfffcf009635f957c",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"pending-ride",
+								"688c586cfffcf009635f957c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ride request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTM5OTA4NTksImV4cCI6MTc1NDA3NzI1OX0.jijFPVRfnMA3mDxg6r-ZsVjplItxWsO9LqIcgrkOO0k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/driver/get-ride-request?sort=-createdAt&page=1&limit=10",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"get-ride-request"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-createdAt"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept ride and complete",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhNTAwY2YzMmEzN2JiMDAyODY1NGEiLCJlbWFpbCI6Im1kcmFuaXRydWJieWF0c3VsdGFuQGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTQwMjU3NjksImV4cCI6MTc1NDExMjE2OX0.KV37otx5lSNxynIU5_uM-aSFaz1e_xISveR5TFbLv08",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"ACCEPTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ride-booking-backend-assignment-5.vercel.app/api/v1/driver/request/688c586cfffcf009635f957c",
+							"protocol": "https",
+							"host": [
+								"ride-booking-backend-assignment-5",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"request",
+								"688c586cfffcf009635f957c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5000",
+			"type": "default"
+		}
+	]
+}
